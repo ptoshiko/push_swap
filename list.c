@@ -59,9 +59,9 @@ void	list_clear(t_list **lst)
 {
 	t_list	*ptr;
 
-	ptr = *lst;
-	while (ptr != NULL )
+	while (*lst)
 	{
+		ptr = *lst;
 		*lst = (*lst)->next;
 		free(ptr->arr);
 		free(ptr);

@@ -74,6 +74,8 @@ int		*make_arr(char **char_arr);
 void	sort_arr(int **int_arr, char **char_arr);
 char	**parse_argv(int argc, char **argv);
 void	clean_score(t_env *env);
+void	clean_char(char **char_arr, int len);
+void	clean_all(int *int_arr, char **char_arr, int len, t_env *env);
 void	count_score_rb(t_env *env);
 void	count_score_rrb(t_env *env);
 void	count_score_ra(t_env *env);

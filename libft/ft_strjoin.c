@@ -33,10 +33,8 @@ static char	*ft_connect(char *s1, char *s2, char	*new)
 		j++;
 	}
 	new[i] = '\0';
-	// if (s1)
-	// 	free(s1);
-	// if (s2)
-	// 	free(s2);
+	if (s1)
+		free(s1);
 	return (new);
 }
 

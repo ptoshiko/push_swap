@@ -63,3 +63,27 @@ void	clean_score(t_env *env)
 		tmp = tmp->next;
 	}
 }
+
+void	clean_char(char **char_arr, int len)
+{
+	int		i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(char_arr[i]);
+		i++;
+	}
+	free(char_arr);
+}
+
+void	clean_all(int *int_arr, char **char_arr, int len, t_env *env)
+{
+	int		i;
+
+	i = 0;
+	free(int_arr);
+	clean_char(char_arr, len);
+	list_clear(&(env->list_a));
+	free(env);
+}

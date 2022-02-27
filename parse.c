@@ -106,73 +106,27 @@ char	**parse_argv(int argc, char **argv)
 	if (argc == 2)
 	{
 		arr = ft_split(argv[1], ' ');
+		if (arr == NULL)
+			return (0);
 	}
-	// else
-	// {
-	// 	arr = (char **)malloc(sizeof(char *) * (argc));
-	// 	arr[argc - 1] = NULL;
-	// 	i = 0;
-	// 	j = 1;
-	// 	while (j < argc)
-	// 	{
-	// 		arr[i] = ft_strdup(argv[j]);
-	// 		i++;
-	// 		j++;
-	// 	}
-	// }
-	// 	printf("arrr %s", arr[0]);
-	// 	printf("arrr %s", arr[1]);
-	// 	printf("arrr %s", arr[2]);
-	// 	printf("arrr %s", arr[3]);
-	// 	printf("arrr %s", arr[0]);
-	// }
-	// i = 0;
-	// j = 1;
-	// while (j < argc)
-	// {
-	// 	arr[i] = argv[j];
-	// 	i++;
-	// 	j++;
-	// }
-	// printf("arrr %s", arr[0]);
-	// printf("arrr %s", arr[1]);
-	// printf("arrr %s", arr[2]);
-	// printf("arrr %s", arr[3]);
-	// printf("arrr %s", arr[0]);
 	else
 	{
-		str = ft_strdup(argv[1]);
-		i = 2;
+		i = 1;
 		while (i < argc)
 		{
-			sp = ft_strdup(" ");
-			tmp = str;
-			str = ft_strjoin(str, sp);
-			free(tmp);
-			free(sp);
-			tmp = str;
-			str = ft_strjoin(str, argv[i]);
-			free(tmp);
-			i++;
+			str = ft_strdup(argv[1]);
+			i = 2;
+			while (i < argc)
+			{
+				str = ft_strjoin(ft_strjoin(str, " "), argv[i]);
+				i++;
+			}
+			arr = ft_split(str, ' ');
+			if (arr == NULL)
+				return (0);
 		}
-		arr = ft_split(str, ' ');
 		free(str);
 	}
 	return (arr);
 }
 
-
-// i = 0;
-// 	sp = ft_strdup(" ");
-// 	str = ft_strdup(argv[1]);
-// 	i = 2;
-// 	while (i < argc)
-// 	{
-// 		str = ft_strjoin(str, sp);
-// 		str = ft_strjoin(str, argv[i]);
-// 		i++;
-// 	}
-// 	arr = ft_split(str, ' ');
-// 	if (str)
-// 		free(str);
-// 	return (arr);

@@ -66,30 +66,6 @@ void	sort_sort(t_env *env, int *int_arr, int len)
 	}
 }
 
-void	clean_char(char **char_arr, int len)
-{
-	int		i;
-
-	i = 0;
-	while (i < len)
-	{
-		free(char_arr[i]);
-		i++;
-	}
-	free(char_arr);
-}
-
-void	clean_all(int *int_arr, char **char_arr, int len, t_env *env)
-{
-	int		i;
-
-	i = 0;
-	free(int_arr);
-	clean_char(char_arr, len);
-	list_clear(&(env->list_a));
-	free(env);
-}
-
 int	main(int argc, char **argv)
 {
 	t_env	*env;
@@ -98,6 +74,8 @@ int	main(int argc, char **argv)
 	int		*int_arr;
 	int		len;
 
+	if (argc < 2)
+		return (1);
 	char_arr = parse_argv(argc, argv);
 	len = count_arr(char_arr);
 	if (check_digit(char_arr) == 1)
