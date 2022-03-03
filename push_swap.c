@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: angelinamazurova <angelinamazurova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 20:22:43 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/02/27 16:23:01 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/03/03 14:04:40 by angelinamaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,24 +66,22 @@ void	sort_sort(t_env *env, int *int_arr, int len)
 	}
 }
 
-int	main(int argc, char **argv)
+int	ft_continue(char **char_arr, int len, int *int_arr, t_env *env)
 {
-	t_env	*env;
-	t_list	*tmp;
-	char	**char_arr;
-	int		*int_arr;
-	int		len;
+	int	*tmp_int;
 
-	if (argc < 2)
-		return (1);
-	char_arr = parse_argv(argc, argv);
-	len = count_arr(char_arr);
-	if (check_digit(char_arr) == 1)
+	int_arr = make_arr(char_arr);
+	if (int_arr == 0)
 	{
 		clean_char(char_arr, len);
 		return (0);
 	}
-	int_arr = make_arr(char_arr);
+	if (check_arr_sorted(int_arr, len))
+	{
+		free(int_arr);
+		clean_char(char_arr, len);
+		return (0);
+	}
 	make_env(&env, int_arr, len);
 	sort_arr(&int_arr, char_arr);
 	if (check_repeat(int_arr, len) == 1)
@@ -94,6 +92,30 @@ int	main(int argc, char **argv)
 	sort_sort(env, int_arr, len);
 	clean_all(int_arr, char_arr, len, env);
 	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_env	*env;
+	char	**char_arr;
+	int		*int_arr;
+	int		len;
+
+	if (argc < 2)
+		return (0);
+	if (ft_strncmp(argv[1], "", 1) == 0)
+	{
+		write(1, "Error\n", 6);
+		return (0);
+	}
+	char_arr = parse_argv(argc, argv);
+	len = count_arr(char_arr);
+	if (check_digit(char_arr) == 1)
+	{
+		clean_char(char_arr, len);
+		return (0);
+	}
+	ft_continue(char_arr, len, int_arr, env);
 }
 
 // check sorted?

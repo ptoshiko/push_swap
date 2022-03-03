@@ -12,6 +12,16 @@
 
 #include "push_swap.h"
 
+int	count_arr(char **char_arr)
+{
+	int	i;
+
+	i = 0;
+	while (char_arr[i] != NULL)
+		i++;
+	return (i);
+}
+
 void	sort_arr(int **int_arr, char **char_arr)
 {
 	int	i;
@@ -34,4 +44,18 @@ void	sort_arr(int **int_arr, char **char_arr)
 		}
 		i++;
 	}
+}
+
+int	check_arr_sorted(int *arr, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len - 1)
+	{
+		if (arr[i] >= arr[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }

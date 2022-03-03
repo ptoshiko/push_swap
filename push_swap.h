@@ -68,6 +68,7 @@ void	make_rr(t_env *env);
 void	make_rrr(t_env *env);
 void	sort_list(t_env *env, int *arr);
 int		count_arr(char **char_arr);
+int		check_arr_sorted(int *arr, int len);
 int		check_repeat(int *arr, int len);
 int		check_digit(char **arr);
 int		*make_arr(char **char_arr);

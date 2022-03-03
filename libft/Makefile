@@ -1,7 +1,7 @@
 NAME = libft.a  
 SRCS =    	ft_isdigit.c ft_strlen.c \
 			ft_strdup.c ft_substr.c ft_strjoin.c\
-			ft_atoi.c ft_split.c
+			ft_atoi.c ft_split.c ft_strncmp.c
 
 HEADER = libft.h
 

@@ -3,36 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: angelinamazurova <angelinamazurova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:16:12 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/02/27 16:32:41 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/03/03 14:05:12 by angelinamaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int	count_arr(char **char_arr)
-{
-	int	i;
-
-	i = 0;
-	while (char_arr[i] != NULL)
-		i++;
-	return (i);
-}
-
 int	check_repeat(int *arr, int len)
 {
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (i < len - 1)
 	{
-		if (arr[i] == arr[i + 1] && arr[i + 1])
+		if (arr[i] == arr[i + 1])
 		{
-			write(1, "Error1\n", 6);
+			write(1, "Error\n", 6);
 			return (1);
 		}
 		i++;
@@ -51,7 +41,7 @@ int	check_digit(char **arr)
 		if (!((arr[i][0] == '-' && ft_isdigit(arr[i][1])) \
 		|| ft_isdigit(arr[i][0])))
 		{
-			write(1, "Error\n", 10);
+			write(1, "Error\n", 6);
 			return (1);
 		}
 		j = 1;
@@ -59,7 +49,7 @@ int	check_digit(char **arr)
 		{
 			if (!ft_isdigit(arr[i][j]))
 			{
-				write(1, "Error\n", 10);
+				write(1, "Error\n", 6);
 				return (1);
 			}
 			j++;
@@ -87,6 +77,7 @@ int	*make_arr(char **char_arr)
 			int_arr[i] = (int)tmp;
 		else
 		{
+			free(int_arr);
 			write(1, "Error\n", 6);
 			return (0);
 		}
@@ -95,12 +86,34 @@ int	*make_arr(char **char_arr)
 	return (int_arr);
 }
 
+char	**parse_parse(int argc, char **argv)
+{
+	char	**arr;
+	char	*str;
+	int		i;
+
+	i = 1;
+	while (i < argc)
+	{
+		str = ft_strdup(argv[1]);
+		i = 2;
+		while (i < argc)
+		{
+			str = ft_strjoin(ft_strjoin(str, " "), argv[i]);
+			i++;
+		}
+		arr = ft_split(str, ' ');
+		if (arr == NULL)
+			return (0);
+	}
+	free(str);
+	return (arr);
+}
+
 char	**parse_argv(int argc, char **argv)
 {
 	char	**arr;
 	char	*str;
-	char	*sp;
-	char	*tmp;
 	int		i;
 
 	if (argc == 2)
@@ -110,23 +123,6 @@ char	**parse_argv(int argc, char **argv)
 			return (0);
 	}
 	else
-	{
-		i = 1;
-		while (i < argc)
-		{
-			str = ft_strdup(argv[1]);
-			i = 2;
-			while (i < argc)
-			{
-				str = ft_strjoin(ft_strjoin(str, " "), argv[i]);
-				i++;
-			}
-			arr = ft_split(str, ' ');
-			if (arr == NULL)
-				return (0);
-		}
-		free(str);
-	}
+		arr = parse_parse(argc, argv);
 	return (arr);
 }
-
