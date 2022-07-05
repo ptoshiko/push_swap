@@ -6,7 +6,7 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 13:22:58 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/02/21 13:23:36 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:10:24 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	find_best_comb(t_env *env)
 	t_list	*tmp;
 	int		n;
 	int		i;
-	int		min;
 
 	make_sum(env);
 	tmp = env->list_b;

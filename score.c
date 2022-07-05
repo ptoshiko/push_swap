@@ -6,7 +6,7 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 16:30:12 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/02/21 13:56:28 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:21:50 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	count_score_rrb(t_env *env)
 	int		i;
 	t_list	*tmp;
 
+	i = 0;
 	tmp = env->list_b;
 	while (tmp)
 	{

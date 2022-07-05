@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angelinamazurova <angelinamazurova@stud    +#+  +:+       +#+        */
+/*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 20:22:43 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/03/03 14:04:40 by angelinamaz      ###   ########.fr       */
+/*   Updated: 2022/07/05 13:47:19 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
 int	check_sorted(t_env *env)
@@ -68,8 +67,6 @@ void	sort_sort(t_env *env, int *int_arr, int len)
 
 int	ft_continue(char **char_arr, int len, int *int_arr, t_env *env)
 {
-	int	*tmp_int;
-
 	int_arr = make_arr(char_arr);
 	if (int_arr == 0)
 	{
@@ -101,9 +98,11 @@ int	main(int argc, char **argv)
 	int		*int_arr;
 	int		len;
 
+	int_arr = NULL;
+	env = NULL;
 	if (argc < 2)
 		return (0);
-	if (ft_strncmp(argv[1], "", 1) == 0)
+	if (!ft_strncmp(argv[1], "\n", 1)) // not 
 	{
 		write(1, "Error\n", 6);
 		return (0);

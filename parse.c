@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angelinamazurova <angelinamazurova@stud    +#+  +:+       +#+        */
+/*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:16:12 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/03/03 14:05:12 by angelinamaz      ###   ########.fr       */
+/*   Updated: 2022/07/05 13:30:08 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	check_repeat(int *arr, int len)
 {
@@ -113,8 +112,6 @@ char	**parse_parse(int argc, char **argv)
 char	**parse_argv(int argc, char **argv)
 {
 	char	**arr;
-	char	*str;
-	int		i;
 
 	if (argc == 2)
 	{
