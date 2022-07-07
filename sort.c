@@ -6,11 +6,10 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 15:25:40 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/02/21 13:26:57 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/07/07 15:06:53 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
 void	sort_con_a(t_env *env)

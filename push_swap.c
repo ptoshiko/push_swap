@@ -6,7 +6,7 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 20:22:43 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/07/05 13:47:19 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/07/07 15:06:44 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int	main(int argc, char **argv)
 	env = NULL;
 	if (argc < 2)
 		return (0);
-	if (!ft_strncmp(argv[1], "\n", 1)) // not 
+	if (!ft_strncmp(argv[1], "\n", 1))
 	{
 		write(1, "Error\n", 6);
 		return (0);

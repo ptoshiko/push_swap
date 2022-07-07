@@ -6,7 +6,7 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 21:39:33 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/02/02 17:40:59 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/07/07 15:06:23 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,15 +106,3 @@ char	**ft_split(char const *s, char c)
 	i_start = i;
 	return (ft_strings(i_start, arr, s, c));
 }
-
-// int main()
-// {
-// 	char *a;
-// 	char c = ' ';
-// 	char **arr;
-
-// 	a = "1234567";
-// 	arr = ft_split(a, c);
-// 	printf("%s\n", arr[0]);
-// 	printf("%s\n", arr[1]);
-// }

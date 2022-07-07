@@ -6,7 +6,7 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:26:08 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/07/05 14:12:18 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/07/07 14:13:06 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include "libft/libft.h"
 # include <limits.h>
 
-# define BUFFER_SIZE 10000
 // type -- best operation type for element
 // min -- min operation for element 
 
@@ -65,8 +64,8 @@ void	make_rra(t_env *env, int flag);
 void	make_rrb(t_env *env, int flag);
 void	make_pb(t_env *env, int flag);
 void	make_pa(t_env *env, int flag);
-void	make_rr(t_env *env);
-void	make_rrr(t_env *env);
+void	make_rr(t_env *env, int flag);
+void	make_rrr(t_env *env, int flag);
 void	sort_list(t_env *env, int *arr);
 int		count_arr(char **char_arr);
 int		check_arr_sorted(int *arr, int len);
@@ -96,6 +95,5 @@ void	make_rrr_rrb(t_env *env);
 void	make_rb_rra(t_env *env);
 void	make_rrb_ra(t_env *env);
 void	manage_elem(t_env *env);
-char	*get_next_line(int fd);
 
 #endif

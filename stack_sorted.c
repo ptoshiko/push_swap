@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   stack_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 16:37:29 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/07/07 15:06:50 by ptoshiko         ###   ########.fr       */
+/*   Created: 2022/07/07 13:49:04 by ptoshiko          #+#    #+#             */
+/*   Updated: 2022/07/07 13:49:22 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_five(t_env *env, int *arr)
+int	stack_sorted(t_env *env)
 {
-	int		min;
-	int		min_next;
+	t_list	*tmp;
 
-	min = arr[0];
-	min_next = arr[1];
-	while (env->count_a > 3)
+	tmp = env->list_a;
+	while (tmp->next)
 	{
-		if (env->list_a->value == min || env->list_a->value == min_next)
-		{
-			make_pb(env, 1);
-			env->count_a--;
-		}
+		if (tmp->value < tmp->next->value)
+			tmp = tmp->next;
 		else
-			make_ra(env, 1);
+			return (1);
 	}
-	sort_three(env);
-	if (env->list_b->value < env->list_b->next->value)
-		make_rb(env, 1);
-	make_pa(env, 1);
-	make_pa(env, 1);
+	return (0);
 }

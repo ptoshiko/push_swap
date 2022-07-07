@@ -6,18 +6,17 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 19:57:55 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/02/21 14:46:02 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/07/07 15:06:36 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
 void	make_rr_ra_rb(t_env *env)
 {
 	while (env->push->score_rr > 0)
 	{
-		make_rr(env);
+		make_rr(env, 1);
 		env->push->score_rr--;
 		env->push->score_ra--;
 		env->push->score_rb--;
@@ -38,7 +37,7 @@ void	make_rrr_rra_rrb(t_env *env)
 {
 	while (env->push->score_rrr > 0)
 	{
-		make_rrr(env);
+		make_rrr(env, 1);
 		env->push->score_rrr--;
 		env->push->score_rra--;
 		env->push->score_rrb--;

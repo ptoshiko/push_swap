@@ -6,11 +6,10 @@
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 16:30:12 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/06/23 15:21:50 by ptoshiko         ###   ########.fr       */
+/*   Updated: 2022/07/07 15:06:40 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
 void	count_score_rb(t_env *env)
@@ -30,16 +29,16 @@ void	count_score_rb(t_env *env)
 
 void	count_score_rrb(t_env *env)
 {
-	int		i;
+	int		len;
 	t_list	*tmp;
 
-	i = 0;
+	len = ft_lstsize(env->list_b);
 	tmp = env->list_b;
 	while (tmp)
 	{
-		tmp->score_rrb = i;
+		tmp->score_rrb = len;
 		tmp = tmp->next;
-		i--;
+		len--;
 	}
 }
 

@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   clean_commands.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptoshiko <ptoshiko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 16:37:29 by ptoshiko          #+#    #+#             */
-/*   Updated: 2022/07/07 15:06:50 by ptoshiko         ###   ########.fr       */
+/*   Created: 2022/07/07 14:40:30 by ptoshiko          #+#    #+#             */
+/*   Updated: 2022/07/07 14:43:31 by ptoshiko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	sort_five(t_env *env, int *arr)
+void	clean_commands(char **arr)
 {
-	int		min;
-	int		min_next;
+	int	i;
 
-	min = arr[0];
-	min_next = arr[1];
-	while (env->count_a > 3)
+	i = 0;
+	while (arr[i])
 	{
-		if (env->list_a->value == min || env->list_a->value == min_next)
-		{
-			make_pb(env, 1);
-			env->count_a--;
-		}
-		else
-			make_ra(env, 1);
+		free(arr[i]);
+		i ++;
 	}
-	sort_three(env);
-	if (env->list_b->value < env->list_b->next->value)
-		make_rb(env, 1);
-	make_pa(env, 1);
-	make_pa(env, 1);
+	free(arr);
 }
